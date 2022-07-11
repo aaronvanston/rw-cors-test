@@ -12,7 +12,7 @@ const rwGqlHandler = createGraphQLHandler({
   sdls,
   cors: {
     credentials: true,
-    origin: '*',
+    origin: ['https://app.buildpass.com.au/'],
   },
   services,
   onException: () => {
