@@ -6,7 +6,7 @@ import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'
 import services from 'src/services/**/*.{js,ts}'
 
-export const handler = createGraphQLHandler({
+const rwGqlHandler = createGraphQLHandler({
   loggerConfig: { logger, options: {} },
   directives,
   sdls,
@@ -20,3 +20,14 @@ export const handler = createGraphQLHandler({
     db.$disconnect()
   },
 })
+
+export const handler = async (...all) => {
+  console.log('🙇‍♀️', all)
+  try {
+    return rwGqlHandler(all)
+  } catch (e) {
+    console.log('👩‍🚀', e)
+    logger.error(e)
+    throw e
+  }
+}
