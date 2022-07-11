@@ -9,6 +9,10 @@ import services from 'src/services/**/*.{js,ts}'
 const rwGqlHandler = createGraphQLHandler({
   loggerConfig: { logger, options: {} },
   directives,
+  cors: {
+    origin: '*',
+    credentials: true,
+  },
   sdls,
   services,
   onException: () => {
