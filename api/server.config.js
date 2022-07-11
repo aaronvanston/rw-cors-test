@@ -16,7 +16,7 @@
 const config = {
   requestTimeout: 15_000,
   logger: {
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'warn',
+    level: 'debug',
   },
 }
 
