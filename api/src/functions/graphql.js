@@ -20,10 +20,19 @@ const rwGqlHandler = createGraphQLHandler({
 export const handler = async (...all) => {
   console.log('🙇‍♀️', all)
   try {
-    const test = rwGqlHandler(...all)
+    const test = await rwGqlHandler(...all)
     console.log('🍋', await test)
 
-    return test
+    const newShape = {
+      ...test,
+      headers: {
+        ...test.headers,
+        ...test.multiValueHeaders,
+      },
+    }
+
+    console.log('😋', newShape)
+    return newShape
   } catch (e) {
     console.log('ERROR:', e)
     throw e
