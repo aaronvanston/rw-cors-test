@@ -24,10 +24,9 @@ const rwGqlHandler = createGraphQLHandler({
 export const handler = async (...all) => {
   console.log('🙇‍♀️', all)
   try {
-    return rwGqlHandler(all)
+    return rwGqlHandler(...all)
   } catch (e) {
-    console.log('👩‍🚀', e)
-    logger.error(e)
+    console.log('🚗', e)
     throw e
   }
 }
