@@ -26,7 +26,7 @@ export const handler = async (...all) => {
   try {
     return rwGqlHandler(...all)
   } catch (e) {
-    console.log('🚗', e)
+    console.log('ERROR:', e)
     throw e
   }
 }
