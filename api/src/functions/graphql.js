@@ -25,7 +25,7 @@ export const handler = async (...all) => {
   console.log('🙇‍♀️', all)
   try {
     const rwGqlResponse = await rwGqlHandler(...all)
-    console.log('🍋', await rwGqlResponse)
+    console.log('🍋', rwGqlResponse)
 
     const responseWithSplicedHeaders = {
       ...rwGqlResponse,
