@@ -10,10 +10,6 @@ const rwGqlHandler = createGraphQLHandler({
   loggerConfig: { logger, options: {} },
   directives,
   sdls,
-  cors: {
-    credentials: true,
-    origin: ['https://app.buildpass.com.au/'],
-  },
   services,
   onException: () => {
     // Disconnect from your database with an unhandled exception.
